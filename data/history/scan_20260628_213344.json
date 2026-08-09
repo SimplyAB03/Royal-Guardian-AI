@@ -1,0 +1,227 @@
+{
+    "ai_summary": {
+        "headline": "Your computer looks excellent.",
+        "tone": "positive",
+        "simple_summary": "Royal Guardian did not find anything that needs attention right now.",
+        "score": 100,
+        "healthy_count": 7,
+        "warning_count": 0,
+        "critical_count": 0,
+        "highlights": [
+            "Basic System Health looks healthy.",
+            "Storage Health looks healthy.",
+            "USB / Removable Devices looks healthy.",
+            "Windows Defender looks healthy.",
+            "Windows Updates looks healthy.",
+            "Startup Apps looks healthy.",
+            "Network Connectivity looks healthy."
+        ],
+        "recommended_actions": [
+            "No action is required right now."
+        ]
+    },
+    "scan_time": "2026-06-28 09:33 PM",
+    "diagnostics": {
+        "computer_name": "LAPTOP-R6SUK539",
+        "windows": "Windows-11-10.0.26200-SP0",
+        "cpu_percent": 5.4,
+        "ram_percent": 83.5,
+        "uptime_days": 0,
+        "last_boot": "2026-06-28 08:01 PM",
+        "drives": [
+            {
+                "device": "C:\\",
+                "mountpoint": "C:\\",
+                "filesystem": "NTFS",
+                "total_gb": 475.9,
+                "free_gb": 316.8,
+                "used_percent": 33.4
+            }
+        ],
+        "disk_free_gb": 316.8,
+        "disk_used_percent": 33.4,
+        "usb_devices": []
+    },
+    "health": {
+        "score": 100,
+        "issues": []
+    },
+    "guardian_engine": {
+        "scan_time": "2026-06-28 09:33 PM",
+        "score": 100,
+        "modules": [
+            {
+                "module": "system_basic",
+                "title": "Basic System Health",
+                "status": "healthy",
+                "priority": 0,
+                "summary": "Checks uptime, memory, CPU, and Windows version.",
+                "data": {
+                    "computer_name": "LAPTOP-R6SUK539",
+                    "windows": "Windows-11-10.0.26200-SP0",
+                    "cpu_percent": 5.4,
+                    "ram_percent": 83.5,
+                    "uptime_days": 0,
+                    "last_boot": "2026-06-28 08:01 PM"
+                },
+                "issues": []
+            },
+            {
+                "module": "storage",
+                "title": "Storage Health",
+                "status": "healthy",
+                "priority": 0,
+                "summary": "Checks all accessible drives and free space.",
+                "data": {
+                    "drives": [
+                        {
+                            "device": "C:\\",
+                            "mountpoint": "C:\\",
+                            "filesystem": "NTFS",
+                            "total_gb": 475.9,
+                            "free_gb": 316.8,
+                            "used_percent": 33.4
+                        }
+                    ]
+                },
+                "issues": []
+            },
+            {
+                "module": "usb_devices",
+                "title": "USB / Removable Devices",
+                "status": "healthy",
+                "priority": 0,
+                "summary": "Checks for removable USB storage devices.",
+                "data": {
+                    "usb_devices": [],
+                    "count": 0
+                },
+                "issues": []
+            },
+            {
+                "module": "defender",
+                "title": "Windows Defender",
+                "status": "healthy",
+                "priority": 0,
+                "summary": "Checks Microsoft Defender antivirus and real-time protection status.",
+                "data": {
+                    "AntivirusEnabled": true,
+                    "RealTimeProtectionEnabled": true,
+                    "AntispywareEnabled": true,
+                    "DefenderSignaturesAge": 0,
+                    "LastQuickScan": "/Date(1781803500905)/",
+                    "LastFullScan": null,
+                    "available": true
+                },
+                "issues": []
+            },
+            {
+                "module": "windows_updates",
+                "title": "Windows Updates",
+                "status": "healthy",
+                "priority": 0,
+                "summary": "Checks whether Windows Update needs a restart and whether the update service is available.",
+                "data": {
+                    "RebootRequired": false,
+                    "WindowsUpdateService": "Stopped",
+                    "available": true
+                },
+                "issues": []
+            },
+            {
+                "module": "startup_apps",
+                "title": "Startup Apps",
+                "status": "healthy",
+                "priority": 0,
+                "summary": "Checks apps configured to start with Windows.",
+                "data": {
+                    "count": 9,
+                    "items": [
+                        {
+                            "Name": "HPSEU_Host_Launcher",
+                            "Command": "C:\\Program Files\\HP\\HP System Event Utility\\Host Launcher\\HpseuHostLauncher.exe",
+                            "Location": "HKU\\S-1-5-21-2967586085-38483678-3308436150-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "LAPTOP-R6SUK539\\Fair Deal Freight"
+                        },
+                        {
+                            "Name": "OneDrive",
+                            "Command": "\"C:\\Users\\Fair Deal Freight\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background",
+                            "Location": "HKU\\S-1-5-21-2967586085-38483678-3308436150-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "LAPTOP-R6SUK539\\Fair Deal Freight"
+                        },
+                        {
+                            "Name": "Steam",
+                            "Command": "\"C:\\Program Files (x86)\\Steam\\steam.exe\" -silent",
+                            "Location": "HKU\\S-1-5-21-2967586085-38483678-3308436150-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "LAPTOP-R6SUK539\\Fair Deal Freight"
+                        },
+                        {
+                            "Name": "Discord",
+                            "Command": "\"C:\\Users\\Fair Deal Freight\\AppData\\Local\\Discord\\Update.exe\" --processStart Discord.exe",
+                            "Location": "HKU\\S-1-5-21-2967586085-38483678-3308436150-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "LAPTOP-R6SUK539\\Fair Deal Freight"
+                        },
+                        {
+                            "Name": "Microsoft.Lists",
+                            "Command": "C:\\Users\\Fair Deal Freight\\AppData\\Local\\Microsoft\\OneDrive\\26.106.0603.0003\\OneDrive.Sync.Service.exe",
+                            "Location": "HKU\\S-1-5-21-2967586085-38483678-3308436150-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "LAPTOP-R6SUK539\\Fair Deal Freight"
+                        },
+                        {
+                            "Name": "MicrosoftEdgeAutoLaunch_2DE3E994EBFDF5670521AE58229D552A",
+                            "Command": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start",
+                            "Location": "HKU\\S-1-5-21-2967586085-38483678-3308436150-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "LAPTOP-R6SUK539\\Fair Deal Freight"
+                        },
+                        {
+                            "Name": "SecurityHealth",
+                            "Command": "%windir%\\system32\\SecurityHealthSystray.exe",
+                            "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "Public"
+                        },
+                        {
+                            "Name": "RtkAudUService",
+                            "Command": "\"C:\\windows\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_f4c5e5443290b318\\RtkAudUService64.exe\" -background",
+                            "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "Public"
+                        },
+                        {
+                            "Name": "OfferUpdater",
+                            "Command": "C:\\hp\\HPQWare\\OfferUpdater\\HP Select Perks.exe",
+                            "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+                            "User": "Public"
+                        }
+                    ],
+                    "error": null
+                },
+                "issues": []
+            },
+            {
+                "module": "network",
+                "title": "Network Connectivity",
+                "status": "healthy",
+                "priority": 0,
+                "summary": "Checks active network adapters, DNS, and basic internet reachability.",
+                "data": {
+                    "internet_ok": true,
+                    "dns_ok": true,
+                    "active_adapters": [
+                        {
+                            "name": "Loopback Pseudo-Interface 1",
+                            "speed_mbps": 1073,
+                            "is_up": true
+                        },
+                        {
+                            "name": "Wi-Fi",
+                            "speed_mbps": 866,
+                            "is_up": true
+                        }
+                    ]
+                },
+                "issues": []
+            }
+        ],
+        "issues": []
+    },
+    "report_path": "reports\\royal_guardian_report_20260628_213344.html"
+}

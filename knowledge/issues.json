@@ -1,0 +1,18 @@
+{
+    "HIGH_MEMORY": {
+        "title": "High Memory Usage",
+        "severity": "medium",
+        "estimated_fix_time": "2 minutes",
+        "risk": "Low",
+        "requires_admin": false,
+        "category": "Performance"
+    },
+    "RESTART_REQUIRED": {
+        "title": "Restart Recommended",
+        "severity": "low",
+        "estimated_fix_time": "30 seconds",
+        "risk": "None",
+        "requires_admin": false,
+        "category": "Maintenance"
+    }
+}

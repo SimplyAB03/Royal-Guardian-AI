@@ -1,0 +1,5 @@
+Royal Guardian 0.4.0
+pytest: 13 passed
+python compileall: PASS
+Live external provider tests: BLOCKED by offline environment / credentials
+Windows EXE/MSI clean-machine test: BLOCKED by non-Windows environment and signing certificate

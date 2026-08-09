@@ -1,0 +1,62 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: royalguardian
+      POSTGRES_PASSWORD: change-me
+      POSTGRES_DB: royalguardian
+    volumes:
+      - rg_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U royalguardian"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  web:
+    build: .
+    environment:
+      RG_ENV: production
+      RG_SESSION_SECRET: ${RG_SESSION_SECRET}
+      RG_ENCRYPTION_SECRET: ${RG_ENCRYPTION_SECRET}
+      RG_DATABASE_URL: postgresql+psycopg://royalguardian:change-me@postgres:5432/royalguardian
+      RG_PUBLIC_BASE_URL: ${RG_PUBLIC_BASE_URL:-http://localhost:8000}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GOOGLE_AI_API_KEY: ${GOOGLE_AI_API_KEY:-}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      MICROSOFT_CLIENT_ID: ${MICROSOFT_CLIENT_ID:-}
+      MICROSOFT_CLIENT_SECRET: ${MICROSOFT_CLIENT_SECRET:-}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PORT: ${SMTP_PORT:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+    ports: ["8000:8000"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+  worker:
+    build: .
+    command: ["python", "-m", "royal_guardian.worker"]
+    environment:
+      RG_ENV: production
+      RG_SESSION_SECRET: ${RG_SESSION_SECRET}
+      RG_ENCRYPTION_SECRET: ${RG_ENCRYPTION_SECRET}
+      RG_DATABASE_URL: postgresql+psycopg://royalguardian:change-me@postgres:5432/royalguardian
+      RG_PUBLIC_BASE_URL: ${RG_PUBLIC_BASE_URL:-http://localhost:8000}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GOOGLE_AI_API_KEY: ${GOOGLE_AI_API_KEY:-}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      MICROSOFT_CLIENT_ID: ${MICROSOFT_CLIENT_ID:-}
+      MICROSOFT_CLIENT_SECRET: ${MICROSOFT_CLIENT_SECRET:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+  
+volumes:
+  rg_postgres:
